@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon.png" alt="Mailtrap" width="100" />
+</p>
+
 # Mailtrap Firebase Extension
 
 Send emails via [Mailtrap](https://mailtrap.io) when documents are created in a
@@ -101,6 +105,10 @@ The extension automatically updates each document with delivery status:
   }
 }
 ```
+
+## Local Development & Testing
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for a step-by-step guide on installing the extension from a local source into a Firebase project for testing.
 
 ## Documentation
 

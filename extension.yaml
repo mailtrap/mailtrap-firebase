@@ -32,15 +32,15 @@ resources:
       Processes document writes in the specified Cloud Firestore collection,
       delivers emails via Mailtrap, and updates documents with delivery status.
     properties:
-      location: ${LOCATION}
+      location: ${FUNCTION_LOCATION}
       buildConfig:
         runtime: nodejs22
       serviceConfig:
         timeoutSeconds: 60
-        availableMemoryMb: 256
+        availableMemory: 256Mi
       eventTrigger:
         eventType: google.cloud.firestore.document.v1.created
-        triggerRegion: ${LOCATION}
+        triggerRegion: ${DATABASE_LOCATION}
         eventFilters:
           - attribute: database
             value: (default)
@@ -49,6 +49,29 @@ resources:
             operator: match-path-pattern
 
 params:
+  - param: FUNCTION_LOCATION
+    label: Cloud Functions location
+    description: >-
+      Where do you want to deploy the functions created for this extension?
+      For help selecting a location, refer to the
+      [location selection guide](https://firebase.google.com/docs/functions/locations).
+    type: string
+    default: us-central1
+    required: true
+    immutable: true
+
+  - param: DATABASE_LOCATION
+    label: Firestore database location
+    description: >-
+      Where is your Firestore database located? The event trigger must be
+      in the same region as the database. For multi-region US use `nam5`,
+      for multi-region EU use `eur3`. Refer to the
+      [Firestore locations guide](https://firebase.google.com/docs/firestore/locations).
+    type: string
+    default: nam5
+    required: true
+    immutable: true
+
   - param: MAILTRAP_API_TOKEN
     label: Mailtrap API Token
     description: >-
