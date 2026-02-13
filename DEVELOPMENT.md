@@ -180,3 +180,45 @@ firebase ext:uninstall mailtrap-email --project=your-firebase-project-id
 Or via the Console: go to **Build > Extensions**, click on the extension instance, and click **Uninstall extension**.
 
 To clean up test data, go to **Build > Firestore Database**, select the `mail` collection, click the three-dot menu, and choose **Delete collection**.
+
+---
+
+## Publishing the extension (upload to Extensions Hub)
+
+To upload the extension for the **mailtrap** publisher (e.g. `firebase ext:dev:upload mailtrap/mailtrap-email`), use the correct Google account and quota project.
+
+### 1. Use the right Firebase account
+
+From the project root:
+
+```bash
+firebase login:list
+```
+
+If the Mailtrap publisher account is not listed, add it (opens browser):
+
+```bash
+firebase login:add
+```
+
+Then set that account as the one to use:
+
+```bash
+firebase login:use <the Mailtrap account email>
+```
+
+### 2. Fix 403 "quota project not set" (Application Default Credentials)
+
+The Firebase Extensions Publisher API requires a **quota project** when using Application Default Credentials.
+
+Create a `.env` in the project root (already gitignored):
+
+```bash
+GOOGLE_CLOUD_QUOTA_PROJECT=<the publisher GCP project ID>
+```
+
+Use the Google Cloud project ID of the project used for the Firebase Extensions publisher (Mailtrap). Then run the upload with that env loaded:
+
+```bash
+source .env && firebase ext:dev:upload mailtrap/mailtrap-email
+```
