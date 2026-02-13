@@ -16,35 +16,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "pnpm"
-          cache-dependency-path: functions/pnpm-lock.yaml
+          cache: "npm"
+          cache-dependency-path: functions/package-lock.json
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Run ESLint
-        run: pnpm run lint
+        run: npm run lint
 
       - name: Check Prettier formatting
-        run: pnpm run format:check
+        run: npm run format:check
 
       - name: TypeScript type check
-        run: pnpm run typecheck
+        run: npm run typecheck
 
       - name: Run unit tests
-        run: pnpm run test:coverage
+        run: npm run test:coverage
 
       - name: Build
-        run: pnpm run build
+        run: npm run build
 
   integration-test:
     runs-on: ubuntu-latest
@@ -52,17 +47,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "pnpm"
-          cache-dependency-path: functions/pnpm-lock.yaml
+          cache: "npm"
+          cache-dependency-path: functions/package-lock.json
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -72,10 +62,10 @@ jobs:
 
       - name: Install dependencies
         working-directory: functions
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
       - name: Run integration tests
-        run: firebase emulators:exec --only firestore "cd functions && pnpm test:integration"
+        run: firebase emulators:exec --only firestore "cd functions && npm run test:integration"
