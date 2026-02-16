@@ -17,10 +17,15 @@ functions/coverage/
 .DS_Store
 Thumbs.db
 
-# Environment
+# Environment (e.g. GOOGLE_CLOUD_QUOTA_PROJECT for ext:dev:upload)
 .env
 .env.local
 .env.*.local
+
+# GCP / Firebase credentials (do not commit)
+*-credentials.json
+*.p12
+service-account*.json
 
 # Firebase
 .firebase/
