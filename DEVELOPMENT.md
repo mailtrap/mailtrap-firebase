@@ -185,7 +185,7 @@ To clean up test data, go to **Build > Firestore Database**, select the `mail` c
 
 ## Publishing the extension (upload to Extensions Hub)
 
-```
+```bash
 firebase ext:dev:upload mailtrap/mailtrap-email --stage alpha --repo https://github.com/mailtrap/mailtrap-firebase --ref main --root /
 ```
 
