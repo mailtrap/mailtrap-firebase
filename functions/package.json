@@ -1,6 +1,6 @@
 {
   "name": "mailtrap-firebase-extension",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Firebase Extension to send emails via Mailtrap API",
   "main": "lib/index.js",
   "engines": {
