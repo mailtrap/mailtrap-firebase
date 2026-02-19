@@ -2,6 +2,10 @@ import { MailtrapClient } from "mailtrap";
 import type { Mail, Address, SendResponse } from "mailtrap";
 import type { MailDocument } from "./types.js";
 
+// Keep version in sync with functions/package.json
+const USER_AGENT =
+  "mailtrap-firebase/1.0.0 (https://github.com/mailtrap/mailtrap-firebase)";
+
 /**
  * Validate that a string is valid base64.
  */
@@ -24,7 +28,10 @@ export async function sendEmail(
   defaultFrom: Address
 ): Promise<SendResponse> {
   // Create client per invocation - it's cheap
-  const client = new MailtrapClient({ token: apiToken });
+  const client = new MailtrapClient({
+    token: apiToken,
+    userAgent: USER_AGENT,
+  });
 
   // Merge default sender - document `from` takes precedence
   const from: Address = doc.from ?? defaultFrom;
