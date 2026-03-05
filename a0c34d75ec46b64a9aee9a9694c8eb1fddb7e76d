@@ -1,0 +1,27 @@
+DEVELOPMENT.md
+  cbb82c6d7a518ddc 83,87
+extension.yaml
+  cbb82c6d7a518ddc 19-20,79,97-98
+PREINSTALL.md
+  cbb82c6d7a518ddc 23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.8",
+  "base_commit_sha": "a0c34d75ec46b64a9aee9a9694c8eb1fddb7e76d",
+  "prompts": {
+    "cbb82c6d7a518ddc": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8db70af4-4f9b-4c55-be98-2afbbb8e45aa",
+        "model": "default"
+      },
+      "human_author": "Leonid Shevtsov <leonid@shevtsov.me>",
+      "messages": [],
+      "total_additions": 9,
+      "total_deletions": 7,
+      "accepted_lines": 9,
+      "overriden_lines": 0
+    }
+  }
+}
