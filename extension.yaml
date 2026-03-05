@@ -16,8 +16,8 @@ author:
   authorName: Mailtrap
   url: https://mailtrap.io
 
-sourceUrl: https://github.com/mailtrap/mailtrap-firebase-extension
-releaseNotesUrl: https://github.com/mailtrap/mailtrap-firebase-extension/blob/main/CHANGELOG.md
+sourceUrl: https://github.com/mailtrap/mailtrap-firebase
+releaseNotesUrl: https://github.com/mailtrap/mailtrap-firebase/blob/main/CHANGELOG.md
 
 billingRequired: true
 
@@ -76,7 +76,7 @@ params:
     label: Mailtrap API Token
     description: >-
       Your Mailtrap API token for sending emails.
-      Get it from https://mailtrap.io/api-tokens
+      Get it from https://docs.mailtrap.io/email-api-smtp/setup/api-tokens
     type: secret
     required: true
 
@@ -94,6 +94,8 @@ params:
     label: Default FROM email address
     description: >-
       Default sender email address used when not specified in the document.
+      Use an address from a verified sending domain.
+      See https://docs.mailtrap.io/email-api-smtp/setup/sending-domain
     type: string
     example: noreply@example.com
     validationRegex: "^.+@.+\\..+$"
