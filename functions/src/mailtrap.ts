@@ -3,7 +3,7 @@ import type { Mail, Address, SendResponse } from "mailtrap";
 import type { MailDocument } from "./types.js";
 
 // Keep version in sync with functions/package.json
-const USER_AGENT = "mailtrap-firebase/1.0.0 (https://github.com/mailtrap/mailtrap-firebase)";
+const USER_AGENT = "mailtrap-firebase/1.0.1 (https://github.com/mailtrap/mailtrap-firebase)";
 
 /**
  * Validate that a string is valid base64.
