@@ -20,8 +20,8 @@ await admin.firestore().collection('mail').add({
 Before installing this extension, you need:
 
 - A [Mailtrap account](https://mailtrap.io/signup)
-- A [verified sending domain](https://mailtrap.io/sending/domains) in Mailtrap
-- A Mailtrap API token from [API Tokens page](https://mailtrap.io/api-tokens)
+- A [verified sending domain](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain) in Mailtrap
+- A Mailtrap API token from [API Tokens page](https://docs.mailtrap.io/email-api-smtp/setup/api-tokens)
 
 #### Billing
 

@@ -80,11 +80,11 @@ DEFAULT_FROM_EMAIL=noreply@your-verified-domain.com
 DEFAULT_FROM_NAME=Test App
 ```
 
-- **MAILTRAP_API_TOKEN** — your Mailtrap API token from the [API Tokens page](https://mailtrap.io/api-tokens).
+- **MAILTRAP_API_TOKEN** — your Mailtrap API token from the [API Tokens page](https://docs.mailtrap.io/email-api-smtp/setup/api-tokens).
 - **FUNCTION_LOCATION** — the [Cloud Functions region](https://firebase.google.com/docs/functions/locations) to deploy to.
 - **DATABASE_LOCATION** — the region of your Firestore database. For multi-region US use `nam5`, for multi-region EU use `eur3`. See the [Firestore locations guide](https://firebase.google.com/docs/firestore/locations).
 - **MAIL_COLLECTION** — the Firestore collection the extension watches for new documents (default: `mail`).
-- **DEFAULT_FROM_EMAIL** — default sender email address. Must be from a [verified sending domain](https://mailtrap.io/sending/domains) in Mailtrap.
+- **DEFAULT_FROM_EMAIL** — default sender email address. Must be from a [verified sending domain](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain) in Mailtrap.
 - **DEFAULT_FROM_NAME** — default sender display name (optional).
 
 ## 5. Deploy the extension
