@@ -1,0 +1,29 @@
+functions/package.json
+  43ac43a53d335fed 3
+CHANGELOG.md
+  43ac43a53d335fed 8-11,13
+functions/src/mailtrap.ts
+  43ac43a53d335fed 6
+extension.yaml
+  43ac43a53d335fed 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.8",
+  "base_commit_sha": "8380ba126637eb46120144988266322ef59f5387",
+  "prompts": {
+    "43ac43a53d335fed": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "e81989f7-c87a-4882-827a-af6ea1836ab3",
+        "model": "default"
+      },
+      "human_author": "Leonid Shevtsov <leonid@shevtsov.me>",
+      "messages": [],
+      "total_additions": 9,
+      "total_deletions": 3,
+      "accepted_lines": 8,
+      "overriden_lines": 1
+    }
+  }
+}
